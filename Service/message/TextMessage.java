@@ -21,4 +21,8 @@ public class TextMessage {
 		
 		return eventInfo;
 	}
+	
+	public static String myMoney(String content){
+		return "您的余额为:1125.3  元";
+	}
 }

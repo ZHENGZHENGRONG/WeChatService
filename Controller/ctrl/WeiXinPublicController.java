@@ -27,6 +27,7 @@ import com.zjapl.weixin.utils.AplWeiXinUtils;
 public class WeiXinPublicController {
 	public static final String REQUEST_TYPE_EVENT = "event"; //事件类型
 	public static final String REQUEST_TYPE_TEXT = "text";  //文本消息
+	public static final String REQUEST_TYPE_VOICE = "voice";  //语音消息
 	
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -67,6 +68,11 @@ public class WeiXinPublicController {
 			
 		case REQUEST_TYPE_TEXT: 
 			responseInfo = messageService.handlerText(requestInfo);
+			break;
+			
+		case REQUEST_TYPE_VOICE:
+			responseInfo = messageService.handlerVoice(requestInfo);
+			break;
 		}
 	
 		return AplWeiXinUtils.EventInfo2Xml(responseInfo);

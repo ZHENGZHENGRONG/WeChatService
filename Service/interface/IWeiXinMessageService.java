@@ -15,4 +15,11 @@ public interface IWeiXinMessageService {
 	 * @return 回复的内容
 	 */
 	public EventInfo handlerText(EventInfo requestInfo);
+
+	/**
+	 * 处理语音消息
+	 * @param requestInfo
+	 * @return
+	 */
+	public EventInfo handlerVoice(EventInfo requestInfo);
 }
